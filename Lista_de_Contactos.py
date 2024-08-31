@@ -1,7 +1,6 @@
 import os
 import re
 
-cambios_guardados = False
 contactos = []
 
 def validar_email(email):
@@ -144,6 +143,7 @@ def cargar_contactos():
         return False
 
 while True:
+    
     print("============ LISTA DE CONTACTOS ==============")
     print("1. Agregar")
     print("2. Ver")
@@ -153,7 +153,7 @@ while True:
     print("6. Cargar desde Fichero")
     print("0. Salir")
     
-
+    
     try:
         opcion = int(input("Elija una opcion: "))
         if opcion < 0 or opcion > 6:
@@ -169,7 +169,8 @@ while True:
         print("Elija numeros y no letras.")
         print("*" * 30)
         opcion = -1
-
+    
+    cambios_guardados = False
     match opcion:
         case 1:
             os.system("cls")
